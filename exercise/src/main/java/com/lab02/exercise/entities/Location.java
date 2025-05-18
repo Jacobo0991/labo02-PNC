@@ -1,6 +1,6 @@
 package com.lab02.exercise.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "locations")
