@@ -1,6 +1,7 @@
 package com.lab02.exercise.entities;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity

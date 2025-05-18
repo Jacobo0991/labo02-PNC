@@ -1,6 +1,6 @@
 package com.lab02.exercise.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
@@ -53,7 +53,6 @@ public class Student{
 
     public String getCarnet() { return carnet; }
     public void setCarnet(String carnet) { this.carnet = carnet; }
-    
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
