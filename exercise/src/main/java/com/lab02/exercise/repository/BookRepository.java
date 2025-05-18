@@ -10,10 +10,10 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 
-    //Busqueda por titulo
+    //Buscar por titulo
     List<Book> findByTitle(String title);
 
-    //Busqueda todods los libros de un autor
+    //Buscar todods los libros de un autor
     List<Book> findByAuthor(Author author);
 
     //Buscar todos los libros de un autor por su apelllido
