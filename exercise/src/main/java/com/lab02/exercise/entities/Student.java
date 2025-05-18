@@ -1,5 +1,6 @@
 package com.lab02.exercise.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -27,9 +28,6 @@ public class Student{
     @Column(nullable = false, unique = true)
     private String email;
 
-    //Prestamo
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Loan> loans;
 
     //Constructor
     public Student() {}
@@ -56,6 +54,4 @@ public class Student{
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public List<Loan> getLoans() { return loans; }
-    public void setLoans(List<Loan> loans) { this.loans = loans; }
 }

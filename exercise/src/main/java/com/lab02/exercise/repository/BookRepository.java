@@ -13,8 +13,9 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     //Buscar por titulo
     List<Book> findByTitle(String title);
 
-    //Buscar todods los libros de un autor
-    List<Book> findByAuthor(Author author);
+    //Buscar todods los libros de un autor por nombre completo
+    @Query("SELECT b FROM Book b WHERE b.author.firstName = :firstName AND b.author.lastName = :lastName")
+    List<Book> findBooksByAuthorFullName(@Param("firstName") String firstName, @Param("lastName") String lastName);
 
     //Buscar todos los libros de un autor por su apelllido
     @Query("SELECT b FROM Book b WHERE b.author.lastName = :lastName")

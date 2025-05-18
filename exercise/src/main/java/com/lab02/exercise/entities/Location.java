@@ -1,5 +1,6 @@
 package com.lab02.exercise.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -24,6 +25,7 @@ public class Location {
 
     // Libro
     @OneToOne(mappedBy = "location")
+    @JsonBackReference
     private Book book;
 
     // Constructor
