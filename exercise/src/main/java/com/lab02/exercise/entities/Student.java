@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "student")
+@Table(name = "students")
 public class Student{
 
     @Id
@@ -22,9 +22,6 @@ public class Student{
     //Prestamo
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Loan> loans;
-
-    //Libro
-
 
     //Constructor
     public Student() {}
@@ -44,4 +41,3 @@ public class Student{
     public List<Loan> getLoans() { return loans; }
     public void setLoans(List<Loan> loans) { this.loans = loans; }
 }
-
