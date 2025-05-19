@@ -12,8 +12,6 @@ import java.util.List;
 
 public interface LoanRepository extends JpaRepository<Loan, Long> {
 
-    //Obtener un préstamo
-    Loan findById(long id);
 
     // Obtener los préstamos de un estudiante
     List<Loan> findByStudent(Student student);

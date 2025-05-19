@@ -1,6 +1,6 @@
 package com.lab02.exercise.entities;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -15,6 +15,7 @@ public class Loan {
     //Estudiante
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Student student;
 
     //libro

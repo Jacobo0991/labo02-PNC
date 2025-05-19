@@ -1,5 +1,6 @@
 package com.lab02.exercise.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -19,7 +20,9 @@ public class Author {
     private String lastName;
 
     //Libros
+
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Book> books;
 
     //Constructor
