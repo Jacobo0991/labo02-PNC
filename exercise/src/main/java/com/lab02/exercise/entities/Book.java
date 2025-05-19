@@ -1,6 +1,7 @@
 package com.lab02.exercise.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -22,13 +23,13 @@ public class Book {
     // Autor
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
-    @JsonBackReference
+    @JsonIgnoreProperties({"books", "hibernateLazyInitializer", "handler"})
     private Author author;
 
     // Ubicación
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id")
-    @JsonManagedReference
+    @JsonIgnoreProperties({"book", "hibernateLazyInitializer", "handler"})
     private Location location;
 
     //Constructor
